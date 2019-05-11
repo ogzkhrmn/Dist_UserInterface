@@ -6,8 +6,38 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>toHavale</from-outcome>
+            <from-outcome>toEFT</from-outcome>
             <to-view-id>/moneyTransfer/eft.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>toHavale</from-outcome>
+            <to-view-id>/moneyTransfer/havale.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/moneyTransfer/eft.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{eftController.sendEft}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/moneyTransfer/success.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{eftController.sendEft}</from-action>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/moneyTransfer/error.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/moneyTransfer/havale.xhtml.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{eftController.sendHavale}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/moneyTransfer/success.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{eftController.sendHavale}</from-action>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/moneyTransfer/error.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

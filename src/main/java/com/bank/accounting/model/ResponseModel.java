@@ -7,23 +7,13 @@ import java.io.Serializable;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ResponseModel implements Serializable {
 
-    private String transactionCode;
+    private boolean success;
 
-    private String coming;
-
-    public String getTransactionCode() {
-        return transactionCode;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setTransactionCode(String transactionCode) {
-        this.transactionCode = transactionCode;
-    }
-
-    public String getComing() {
-        return coming;
-    }
-
-    public void setComing(String coming) {
-        this.coming = coming;
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 }

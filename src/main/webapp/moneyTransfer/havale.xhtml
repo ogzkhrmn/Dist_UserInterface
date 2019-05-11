@@ -6,7 +6,7 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-    <title>EFT Gönderimi</title>
+    <title>Havale Gönderimi</title>
 </h:head>
 <h:body>
     <h:form>
@@ -55,7 +55,7 @@
             </h:inputText>
             <h:message for="amount"/>
 
-            <h:commandButton value="Gönder" action="#{eftController.sendEft()}"/>
+            <h:commandButton value="Gönder" action="#{eftController.sendHavale()}"/>
         </h:panelGrid>
     </h:form>
 </h:body>
